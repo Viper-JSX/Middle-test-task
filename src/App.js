@@ -9,7 +9,8 @@ import { SORT_BY_SIZE } from "./various_things/constants";
 function App(){
     const dispatch = useDispatch();
     const message = useSelector((state) => state.message);
-    console.log(message);
+    const folders = useSelector((state) => state.folders);
+    console.log(message, folders);
 
     useEffect(() => {
         dispatch(getFolders());
