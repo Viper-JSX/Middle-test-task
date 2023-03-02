@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Layout from "./components/layout/Layout";
 import { getFolders } from "./redux/thunks/folders_thunks";
 import { showMessage } from "./redux/thunks/message_thunks";
 
@@ -19,7 +20,7 @@ function App(){
 
     return(
         <div>
-            
+            <Layout />
         </div>
     );
 }

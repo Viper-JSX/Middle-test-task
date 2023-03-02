@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router";
 
 import Desktop from "../Desktop/Desktop";
 import DesktopWindow from "../Desktop_window/Desktop_window";
+import Folder from "../Folder/Folder";
 
 function Layout () {
     return(
@@ -10,8 +11,10 @@ function Layout () {
 
                 <Routes>
                     <Route path="/" element={ <DesktopWindow /> }>
-                        <Route path="folders/:folder-name" element={ <Folder /> } />
+                        <Route path="/folders/:foldername" element={ <Folder /> } />
                     </Route>
+
+                    <Route path="*" element={ <h2>Not found</h2> } />
                 </Routes>
 
             </Desktop>

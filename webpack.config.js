@@ -5,7 +5,8 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "bundle"),
-        filename: "bundle.js"
+        filename: "bundle.js",
+        publicPath: "/"
     },
 
     module:{
@@ -21,6 +22,10 @@ module.exports = {
                 use: [ "style-loader", "css-loader" ]
             }
         ]
+    },
+
+    devServer: {
+        historyApiFallback: true
     },
 
     plugins: [ new HtmlWebpackPlugin({ template: "./src/index.html" }) ]
