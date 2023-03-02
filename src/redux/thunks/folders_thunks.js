@@ -14,10 +14,13 @@ function getFolders (payload) {
             );
     
             const folders = response.data.data.files;
+            const foldersLowerCaseKey = Object.fromEntries( // Make all keys to be lowercase
+                Object.entries(folders).map(([ k, v ]) => [ k.toLowerCase(), v ])
+            );
 
-            dispatch({ type: GET_FOLDERS, payload: { folders } });
+            dispatch({ type: GET_FOLDERS, payload: { folders: foldersLowerCaseKey } });
         } catch (err) {
-            console.log("Cannot get folders");
+            console.log(`Cannot get folders ${err}`);
         }
 
     }

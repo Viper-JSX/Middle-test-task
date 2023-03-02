@@ -5,9 +5,8 @@ function Folder () {
     const params = useParams();
     const folderName = params.foldername;
     const folders = useSelector((state) => state.folders.folders);
-    //const folder = folders.find((folder) => folder.name === folderName);
-    const folder = null;
-    console.log(folders)
+    const folder = folders[folderName];
+    console.log(folder, folderName)
 
     if (!folder) {
         return(
