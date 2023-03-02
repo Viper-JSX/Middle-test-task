@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeSortCriteria } from "./redux/reducers/action_creators/folders_action_creators";
 import { getFolders } from "./redux/thunks/folders_thunks";
 import { showMessage } from "./redux/thunks/message_thunks";
-import { SORT_BY_SIZE } from "./various_things/constants";
 
 function App(){
     const dispatch = useDispatch();
@@ -21,15 +19,7 @@ function App(){
 
     return(
         <div>
-            <b>
-            {
-                message ? 
-                message.text
-                :
-                ""
-            }
-            </b>
-            Working
+            
         </div>
     );
 }
