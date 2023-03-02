@@ -11,7 +11,8 @@ function App(){
     useSelector((state) => console.log(state.folders));
 
     useEffect(() => {
-        dispatch(changeSortCriteria({ sortBy: SORT_BY_SIZE }));
+        dispatch(getFolders());
+        //dispatch(changeSortCriteria({ sortBy: SORT_BY_SIZE }));
     }, []);
 
 
