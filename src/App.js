@@ -9,7 +9,7 @@ function App(){
     const dispatch = useDispatch();
     const message = useSelector((state) => state.message);
     const folders = useSelector((state) => state.folders);
-    console.log(message, folders);
+    //console.log(message, folders);
 
     useEffect(() => {
         dispatch(getFolders());
