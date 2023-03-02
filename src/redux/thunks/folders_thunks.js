@@ -14,13 +14,13 @@ function getFolders (payload) {
             );
     
             const folders = response.data.data.files;
-            const foldersLowerCaseKey = Object.fromEntries( // Make all keys to be lowercase
-                Object.entries(folders).map(([ k, v ]) => [ k.toLowerCase(), v ])
+            const foldersConverted = Object.fromEntries( // Convert folders object from { Folder: [...file] } to { folder: { name: FolderName, files: [...file] } }
+                Object.entries(folders).map(([ key, value ]) => [ key.toLocaleLowerCase(), { name: key, files: value } ])  
             );
 
-            dispatch({ type: GET_FOLDERS, payload: { folders: foldersLowerCaseKey } });
+            dispatch({ type: GET_FOLDERS, payload: { folders: foldersConverted } });
         } catch (err) {
-            console.log(`Cannot get folders ${err}`);
+            console.log("Cannot get folders");
         }
 
     }
