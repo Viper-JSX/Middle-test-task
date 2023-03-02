@@ -10,7 +10,7 @@ function message (state = initialState.message, action) {
             return null;
         }
         default: {
-            return null;
+            return state;
         }
     }
 }

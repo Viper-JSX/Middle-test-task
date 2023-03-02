@@ -4,7 +4,7 @@ import { CHANGE_SORT_CRITERIA, GET_FOLDERS, GET_FOLDERS_ERROR } from '../action_
 function folders (state=initialState.folders, action) {
     switch (action.type) {
         case GET_FOLDERS: {
-            console.log("Getting folders");
+            // console.log("Getting folders");
             return { ...state, folders: action.payload.folders };
         }
         case GET_FOLDERS_ERROR: {

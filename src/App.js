@@ -3,22 +3,31 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeSortCriteria } from "./redux/reducers/action_creators/folders_action_creators";
 import { getFolders } from "./redux/thunks/folders_thunks";
+import { showMessage } from "./redux/thunks/message_thunks";
 import { SORT_BY_SIZE } from "./various_things/constants";
 
 function App(){
     const dispatch = useDispatch();
-    dispatch(getFolders());
-    useSelector((state) => console.log(state.folders));
+    const message = useSelector((state) => state.message);
+    console.log(message);
 
     useEffect(() => {
         dispatch(getFolders());
-        //dispatch(changeSortCriteria({ sortBy: SORT_BY_SIZE }));
+        dispatch(showMessage({ title: "Error", text: "Something bad happened" }));
     }, []);
 
 
 
     return(
         <div>
+            <b>
+            {
+                message ? 
+                message.text
+                :
+                ""
+            }
+            </b>
             Working
         </div>
     );

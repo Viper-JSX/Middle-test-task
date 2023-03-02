@@ -4,7 +4,9 @@ const initialState = {
     folders: {
         folders: [],
         sortBy: SORT_BY_NAME
-    }
+    },
+    
+    message: null
 };
 
 export default initialState;
