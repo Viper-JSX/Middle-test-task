@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
+import Container from "../Container/Container";
 import FileItem from "../Items/File_item";
 import FolderTopPanel from "./Folder_pannel/Folder_top_panel";
 
@@ -21,9 +22,12 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                 folderName={folder.name}
                 handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
             />
-            {
-                folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
-            }
+
+            <Container additionalClassNames={[ "folder__files-container" ]}>
+                {
+                    folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
+                }
+            </Container>
         </div>
     );
 }
