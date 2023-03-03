@@ -17,18 +17,20 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
     } 
 
     return(
-        <div className="folder">
-            <FolderTopPanel 
-                folderName={folder.name}
-                handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
-            />
+        <Container additionalClassNames={[ "folder-wrapper" ]}>
+            <div className="folder">
+                <FolderTopPanel 
+                    folderName={folder.name}
+                    handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
+                />
 
-            <Container additionalClassNames={[ "folder__files-container" ]}>
-                {
-                    folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
-                }
-            </Container>
-        </div>
+                <Container additionalClassNames={[ "folder__files-container" ]}>
+                    {
+                        folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
+                    }
+                </Container>
+            </div>
+        </Container>
     );
 }
 
