@@ -20,6 +20,7 @@ function FolderTopPanel (
                 <b>{ folderName }</b>
                 <FolderControl />
             </Container>  
+
             <SortBy currentSortCriteria={currentSortCriteria} sortCriterias={[ SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_CREATION_DATE]} handleSortCriteriaChange={handleFoldersSortCriteriaChange} />
         </div>
     );
