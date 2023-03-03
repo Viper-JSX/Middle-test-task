@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 
 function FileItem ({ file }) {
     return(
-        <Link>
-            <br />
-            <b>File</b>
-            <br />
-            { file.name }
-        </Link>
+        <div className="fileItem">
+            <Link>
+                <br />
+                <b>File</b>
+                <br />
+                { file.name }
+            </Link>
+        </div>
     );
 }
 

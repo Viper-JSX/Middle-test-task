@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import FileItem from "../Items/File_item";
+import FolderTopPanel from "./Folder_pannel/Folder_top_panel";
 
 function Folder () {
     const params = useParams();
@@ -16,6 +17,7 @@ function Folder () {
 
     return(
         <div className="folder">
+            <FolderTopPanel />
             <h2>{ folderName }</h2>
             {
                 folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
