@@ -7,9 +7,8 @@ import { showMessage } from "./redux/thunks/message_thunks";
 
 function App(){
     const dispatch = useDispatch();
-    const message = useSelector((state) => state.message);
-    const folders = useSelector((state) => state.folders);
-    //console.log(message, folders);
+    const [ folders, message ] = useSelector((state) => [ state.folders, state.message ]);
+    console.log(folders)
 
     useEffect(() => {
         dispatch(getFolders());
