@@ -1,48 +1,50 @@
-import { faFileText } from "@fortawesome/free-solid-svg-icons";
-import { lazy } from "react";
+import { faFileText, faFileImage, faFilePdf, faFileWord, faFileExcel  } from "@fortawesome/free-solid-svg-icons";
+
+
 
 function getFileIconComponent (extension="") {
     let icon;
 
     switch (extension) {
         case ".txt": {
-            icon = lazy(() => import("@fortawesome/free-solid-svg-icons"))
+            icon = { color: "black", icon: faFileText };
             break;
         }
 
         case ".jpeg": 
         case ".jpg": {
-            icon = ".jpeg"
+            icon = { color: "red", icon: faFileImage };
             break;
         }
 
         case ".png": {
-            icon = ".png"
+            icon = icon = { color: "red", icon: faFileImage };
             break;
         }
 
         case ".pdf": {
-            icon = lazy(() => import("@fortawesome/free-solid-svg-icons"))
+            icon = icon = { color: "red", icon: faFilePdf };
             break;
         }
 
-        case ".txt": {
-            icon = ".txt"
+        case ".docx":
+        case ".doc": {
+            icon = icon = { color: "blue", icon: faFileWord };
             break;
         }
 
-        case ".txt": {
-            icon = ".txt"
+        case ".xlsx": {
+            icon = icon = { color: "green", icon: faFileExcel };
             break;
         }
 
-        case ".txt": {
-            icon = ".txt"
-            break;
-        }
+        // case ".txt": {
+        //     icon = icon = { color: "black", icon: faFileText };
+        //     break;
+        // }
 
         default: {
-            icon = "unknown";
+            icon =  { color: "black", icon: "unknown" };
         }
     }
 
