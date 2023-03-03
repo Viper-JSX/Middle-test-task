@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Layout from "./components/layout/Layout";
+import { changeFoldersSortCriteria } from "./redux/action_creators/folders_action_creators";
 import { getFolders } from "./redux/thunks/folders_thunks";
 import { showMessage } from "./redux/thunks/message_thunks";
 
@@ -17,10 +17,17 @@ function App(){
     }, []);
 
 
+    function handleFoldersSortCriteriaChange (event) {
+        console.log(event.target.value)
+        dispatch(changeFoldersSortCriteria( { sortBy: event.target.value } ));
+    }
+
 
     return(
         <div>
-            <Layout />
+            <Layout
+                handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
+            />
         </div>
     );
 }

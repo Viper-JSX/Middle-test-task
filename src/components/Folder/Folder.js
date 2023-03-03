@@ -3,7 +3,7 @@ import { useLocation, useParams } from "react-router";
 import FileItem from "../Items/File_item";
 import FolderTopPanel from "./Folder_pannel/Folder_top_panel";
 
-function Folder () {
+function Folder ({ handleFoldersSortCriteriaChange }) {
     const params = useParams();
     const folderName = params.foldername;
     const folders = useSelector((state) => state.folders.folders);
@@ -17,7 +17,9 @@ function Folder () {
 
     return(
         <div className="folder">
-            <FolderTopPanel />
+            <FolderTopPanel 
+                handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
+            />
             <h2>{ folderName }</h2>
             {
                 folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
