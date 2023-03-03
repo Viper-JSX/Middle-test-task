@@ -3,6 +3,7 @@ import SortBy from "../../Sort_by/Sort_by";
 import FolderControl from "./Folder_control";
 
 import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_CREATION_DATE } from "../../../various_things/constants";
+import Container from "../../Container/Container";
 
 function FolderTopPanel (
     {
@@ -15,8 +16,10 @@ function FolderTopPanel (
 
     return(
         <div className="folder__top-panel">
-            <b>{ folderName }</b>
-            <FolderControl />
+            <Container>
+                <b>{ folderName }</b>
+                <FolderControl />
+            </Container>  
             <SortBy currentSortCriteria={currentSortCriteria} sortCriterias={[ SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_CREATION_DATE]} handleSortCriteriaChange={handleFoldersSortCriteriaChange} />
         </div>
     );
