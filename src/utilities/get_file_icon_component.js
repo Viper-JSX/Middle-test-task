@@ -1,9 +1,12 @@
+import { faFileText } from "@fortawesome/free-solid-svg-icons";
+import { lazy } from "react";
+
 function getFileIconComponent (extension="") {
     let icon;
 
     switch (extension) {
         case ".txt": {
-            icon = ".txt"
+            icon = lazy(() => import("@fortawesome/free-solid-svg-icons"))
             break;
         }
 
@@ -19,7 +22,7 @@ function getFileIconComponent (extension="") {
         }
 
         case ".pdf": {
-            icon = ".txt"
+            icon = lazy(() => import("@fortawesome/free-solid-svg-icons"))
             break;
         }
 
