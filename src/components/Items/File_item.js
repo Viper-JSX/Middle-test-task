@@ -8,7 +8,7 @@ function FileItem ({ file }) {
                 <br />
                 <b>File</b>
                 <br />
-                <FileIcon />
+                <FileIcon fileName={file.name} />
                 <br />
                 { file.name }
             </Link>
