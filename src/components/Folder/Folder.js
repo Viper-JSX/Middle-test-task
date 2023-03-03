@@ -18,9 +18,9 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
     return(
         <div className="folder">
             <FolderTopPanel 
+                folderName={folder.name}
                 handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
             />
-            <h2>{ folderName }</h2>
             {
                 folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
             }

@@ -18,7 +18,6 @@ function App(){
 
 
     function handleFoldersSortCriteriaChange (event) {
-        console.log(event.target.value)
         dispatch(changeFoldersSortCriteria( { sortBy: event.target.value } ));
     }
 

@@ -6,6 +6,7 @@ import { SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_CREATION_DATE } from "../../../vari
 
 function FolderTopPanel (
     {
+        folderName,
         handleFoldersSortCriteriaChange
     }
 ) {
@@ -14,6 +15,7 @@ function FolderTopPanel (
 
     return(
         <div className="folder__top-panel">
+            <b>{ folderName }</b>
             <FolderControl />
             <SortBy currentSortCriteria={currentSortCriteria} sortCriterias={[ SORT_BY_NAME, SORT_BY_SIZE, SORT_BY_CREATION_DATE]} handleSortCriteriaChange={handleFoldersSortCriteriaChange} />
         </div>
