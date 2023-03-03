@@ -1,7 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+
 function FileIcon () {
 
+    return(
+        <FontAwesomeIcon icon={faCoffee} />
+    );
 
-    
 }
 
 export default FileIcon;
