@@ -17,6 +17,7 @@ function FolderTopPanel (
     return(
         <div className="folder__top-panel">
             <Container>
+                <div></div> {/* To align name to the center and control to the right */}
                 <b>{ folderName }</b>
                 <FolderControl />
             </Container>  

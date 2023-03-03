@@ -1,0 +1,23 @@
+.folder {
+    background-color: $light-color;
+}
+
+.folder__top-panel {
+    color: $light-color;
+    background-color: $dark-color;
+    display: flex;
+    flex-direction: column;
+}
+
+.folder__top-panel {
+    > .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.sort-by{
+    margin: 10px 0 10px 0;
+    align-self: flex-end;
+}
