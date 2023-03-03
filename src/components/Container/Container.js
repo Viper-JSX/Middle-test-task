@@ -1,6 +1,6 @@
 function Container ({ children }) {
     return(
-        <div className="container">
+        <div className="container" style={{ display: "flex", alignItems:"center" }}>
             { children }
         </div>
     );
