@@ -21,7 +21,7 @@ function getFolders (payload) {
 
             dispatch({ type: GET_FOLDERS, payload: { folders: foldersConverted } });
         } catch (err) {
-            dispatch(showMessage({ title: "Network error", text: "Cannot get messages" }));
+            dispatch(showMessage({ title: "Network error", text: "Cannot get folders" }));
         }
 
     }

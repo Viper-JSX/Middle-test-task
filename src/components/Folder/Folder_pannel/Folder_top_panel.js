@@ -12,8 +12,7 @@ function FolderTopPanel (
     }
 ) {
     const currentSortCriteria = useSelector((state) => state.folders.sortBy);
-    console.log(currentSortCriteria)
-
+    
     return(
         <div className="folder__top-panel">
             <Container>
