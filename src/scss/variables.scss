@@ -2,4 +2,9 @@ $light-color: #D9D9D9;
 $dark-color: #111111;
 $transparent-dark-color: rgba(0, 0, 0, 0.5);
 $transparent-light-dark-color: rgba(0, 0, 0, 0.2);
+
 $light-border: 2px solid $light-color;
+$dark-border: 2px solid black;
+
+$thin-light-border: 1px solid $light-color;
+$thin-dark-border: 1px solid black;

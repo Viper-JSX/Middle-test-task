@@ -1,0 +1,36 @@
+.message {
+    width: 200px;
+    min-height: 100px;
+    background-color: $light-color;
+    border: $dark-border;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    text-align: center;
+    word-break: break-all;
+    position: fixed;
+    bottom: 0;
+    right: 1em;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    &.hidden {
+        transform: translateY(100%);
+    }
+}
+
+.message__title {
+    width: 100%;
+    display: inline-block;
+    border-bottom: $thin-dark-border
+}
+
+
+.message__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
