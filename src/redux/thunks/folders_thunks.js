@@ -1,6 +1,7 @@
 import client from "../../axios/client";
 import { apiToken } from "../../api/api";
 import { GET_FOLDERS } from "../action_types";
+import { showMessage } from "./message_thunks";
 
 function getFolders (payload) {
     return async function (dispatch) {
@@ -20,7 +21,7 @@ function getFolders (payload) {
 
             dispatch({ type: GET_FOLDERS, payload: { folders: foldersConverted } });
         } catch (err) {
-            console.log("Cannot get folders");
+            dispatch(showMessage({ title: "Network error", text: "Cannot get messages" }));
         }
 
     }

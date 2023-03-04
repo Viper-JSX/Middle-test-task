@@ -7,8 +7,8 @@ function Message () {
 
     return(
         <div className={ `message ${message ? "visible" : "hidden"}` }>
-            <b className="message__title">{ text }</b>
-            <p className="message__text">{ title }</p>
+            <b className="message__title">{ title }</b>
+            <p className="message__text">{ text }</p>
         </div>
     );
 }

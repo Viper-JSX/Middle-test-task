@@ -19,7 +19,6 @@ function App(){
         }
         
         dispatch(getFolders());
-        dispatch(showMessage({ title: "Error", text: "Something bad happened" }));
     }, []);
 
 
