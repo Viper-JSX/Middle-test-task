@@ -1,6 +1,6 @@
 function Desktop ({ children }) {   
     return(
-        <div className="deskTop">
+        <div className="desktop">
             { children }
         </div>
     );

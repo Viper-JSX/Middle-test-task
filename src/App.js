@@ -1,15 +1,16 @@
-import axios from "axios";
+import "./scss/main.scss";
+
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Layout from "./components/layout/Layout";
+import { changeFoldersSortCriteria } from "./redux/action_creators/folders_action_creators";
 import { getFolders } from "./redux/thunks/folders_thunks";
 import { showMessage } from "./redux/thunks/message_thunks";
 
 function App(){
     const dispatch = useDispatch();
-    const message = useSelector((state) => state.message);
-    const folders = useSelector((state) => state.folders);
-    //console.log(message, folders);
+    const [ folders, message ] = useSelector((state) => [ state.folders, state.message ]);
+    console.log(folders)
 
     useEffect(() => {
         dispatch(getFolders());
@@ -17,10 +18,16 @@ function App(){
     }, []);
 
 
+    function handleFoldersSortCriteriaChange (event) {
+        dispatch(changeFoldersSortCriteria( { sortBy: event.target.value } ));
+    }
+
 
     return(
         <div>
-            <Layout />
+            <Layout
+                handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
+            />
         </div>
     );
 }

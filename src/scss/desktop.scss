@@ -1,0 +1,82 @@
+.desktop{
+    width: 100%;
+    height: 100vh;
+    padding: 1em;
+    background-image: url("../../public/images/desktop_images/desktop_image_1.jpg");
+    background-size: cover;
+}
+
+.desktop-window {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.folder-item {
+    width: 80px;
+    height: 100px;
+    margin: 0.4em;
+    padding: 0.1em;
+    text-align: center;
+    transition: 0.2s;
+    overflow: hidden;
+}
+
+.folder-item {
+    > * {
+        text-decoration: none;
+    }
+}
+
+.folder-icon {
+    color: #F8D775;
+    font-size: 40px;
+    display: block;
+}
+
+.folder-name {
+    color: $dark-color;
+    font-size: 1.2em;
+}
+
+.folder-item {
+    &:hover {
+        background-color: $transparent-light-dark-color;
+    }
+}
+
+
+.file-item {
+    width: 80px;
+    height: 100px;
+    color: $dark-color;
+    margin: 0.4em;
+    padding: 0.2em;
+    text-align: center;
+    word-break: break-all;
+    overflow: hidden;
+    transition: 0.2s;
+    transform: scale(1.2);
+
+    &:hover{
+        background-color: $transparent-light-dark-color;
+    }
+
+    animation: file-appear 0.4s 1 forwards;
+
+    &::after {
+        content: var(--file-index);
+    }
+}
+
+.file-item {
+    > * {
+        color: $dark-color;
+        text-decoration: none;
+    }
+}
+
+.file-icon-container {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}

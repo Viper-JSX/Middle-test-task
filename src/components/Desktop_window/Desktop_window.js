@@ -6,7 +6,7 @@ function DesktopWindow () {
     const folders = useSelector((state) => Object.values(state.folders.folders));
 
     return(
-        <div className="desktopWindow">
+        <div className="desktop-window">
             {
                 folders.map((folder) => <FolderItem folder={folder} key={`${folder.name}_folder`} />)
             }
