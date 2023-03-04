@@ -5,3 +5,32 @@
     background-image: url("../../public/images/desktop_images/desktop_image_1.jpg");
     background-size: cover;
 }
+
+.desktop-window {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.folder-item {
+    width: 80px;
+    height: 100px;
+    margin: 0.4em;
+    padding: 0.1em;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.folder-icon {
+    font-size: 40px;
+    display: block;
+}
+
+.folder-name {
+    font-size: 1.2em;
+}
+
+.folder-item {
+    &:hover {
+        background-color: $transparent-light-dark-color;
+    }
+}
