@@ -4,7 +4,7 @@ function FolderControl () {
     return( 
         <nav className="folder-control">
             <ul>
-                <li><Link to="/">X</Link></li>
+                <li className="close-button"><Link to="/">X</Link></li>
             </ul>
         </nav>
     );

@@ -14,7 +14,7 @@ function FileItem ({ file }) {
     `;
 
     return(
-        <div className="fileItem" title={itemTitle}>
+        <div className="file-item" title={itemTitle}>
             <Link>
                 <FileIcon fileName={file.name} />
                 { file.name }
