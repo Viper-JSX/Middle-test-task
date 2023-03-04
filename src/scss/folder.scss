@@ -16,6 +16,9 @@
     max-width: 1200px;
     min-height: 400px;
     background-color: $light-color;
+    opacity: 0;
+
+    animation: folder-open 0.5s 1 forwards;
 }
 
 .folder__top-panel {

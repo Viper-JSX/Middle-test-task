@@ -18,14 +18,23 @@
     padding: 0.1em;
     text-align: center;
     transition: 0.2s;
+    overflow: hidden;
+}
+
+.folder-item {
+    > * {
+        text-decoration: none;
+    }
 }
 
 .folder-icon {
+    color: #F8D775;
     font-size: 40px;
     display: block;
 }
 
 .folder-name {
+    color: $dark-color;
     font-size: 1.2em;
 }
 
