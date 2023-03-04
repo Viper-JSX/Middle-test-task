@@ -73,32 +73,3 @@
     display: flex;
     flex-wrap: wrap;
 }
-
-.file-item {
-    width: 80px;
-    height: 100px;
-    color: $dark-color;
-    margin: 0.4em;
-    padding: 0.2em;
-    text-align: center;
-    word-break: break-all;
-    overflow: hidden;
-    transition: 0.2s;
-
-    &:hover{
-        background-color: $transparent-light-dark-color;
-    }
-}
-
-.file-item {
-    > * {
-        color: $dark-color;
-        text-decoration: none;
-    }
-}
-
-.file-icon-container {
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-}

@@ -26,7 +26,7 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
 
                 <Container additionalClassNames={[ "folder__files-container" ]}>
                     {
-                        folder.files.map((file) => <FileItem file={file} key={`${folder.name}_${file.name}`} />)
+                        folder.files.map((file, index) => <FileItem file={file} fileIndex={index} key={`${folder.name}_${file.name}`} />)
                     }
                 </Container>
             </div>
