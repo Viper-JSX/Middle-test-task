@@ -1,5 +1,6 @@
 import initialState from '../initial_state';
 import { CHANGE_SORT_CRITERIA, GET_FOLDERS, GET_FOLDERS_ERROR } from '../action_types';
+import writeToLocalStorage from '../../utilities/write_to_local_storage';
 
 function folders (state=initialState.folders, action) {
     switch (action.type) {
@@ -11,6 +12,7 @@ function folders (state=initialState.folders, action) {
             return state;
         }
         case CHANGE_SORT_CRITERIA: {
+            writeToLocalStorage("foldersSortCriteria", action.payload.sortBy);
             return { ...state, sortBy: action.payload.sortBy };
         }
         default: {
