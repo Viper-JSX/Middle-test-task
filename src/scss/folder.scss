@@ -4,6 +4,7 @@
     background-color: $transparent-dark-color;
     position: fixed;
     top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,15 +33,31 @@
     }
 }
 
+.folder-control li {
+    width: 1.5em;
+    height: 1.5em;
+    transition: 0.1s;
+    display: flex;
+    line-height: 0;
+}
+
 .folder-control {
-    
+    li {
+        > * { //Link elements
+            width: 100%;
+            height: 100%;
+            color: $light-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
 
 .close-button {
-    width: 1.2em;
-    height: 1.2em;
-    color: $light-color;
-    background-color: orangered;
+    &:hover {
+        background-color: orangered;
+    }
 }
 
 .sort-by{
@@ -57,12 +74,24 @@
 .file-item {
     width: 80px;
     height: 100px;
-    background-color: re;
+    color: $dark-color;
     margin: 0.4em;
     padding: 0.2em;
     text-align: center;
     word-break: break-all;
     overflow: hidden;
+    transition: 0.2s;
+
+    &:hover{
+        background-color: $transparent-light-dark-color;
+    }
+}
+
+.file-item {
+    > * {
+        color: $dark-color;
+        text-decoration: none;
+    }
 }
 
 .file-icon-container {
