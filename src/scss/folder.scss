@@ -13,9 +13,10 @@
 .folder {
     width: 80%;
     height: 80vh;
-    min-width: 300px;
+    min-width: 100px;
     max-width: 1200px;
     min-height: 180px;
+    max-height: 800px;
     background-color: $light-color;
     opacity: 0;
 
@@ -73,6 +74,7 @@
 }
 
 .folder > .container {
+    display: flex;
     align-items: flex-start !important;
     flex-grow: 1;
     overflow-y: auto; /*not working*/

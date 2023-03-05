@@ -1,5 +1,9 @@
-@media screen and ( max-width: 380px ) {
+@media screen and ( max-width: 480px ) {
     .desktop-window {
+        justify-content: center;
+    }
+
+    .folder__files-container{
         justify-content: center;
     }
 }
