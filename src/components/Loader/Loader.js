@@ -1,6 +1,6 @@
 import { CircularProgress } from "@mui/material";
 
-function Loader ( loading ) {
+function Loader ( { loading } ) {
     if (!loading) {
         return null;
     }

@@ -1,6 +1,6 @@
 import "./scss/main.scss";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Layout from "./components/layout/Layout";
 import { changeFoldersSortCriteria } from "./redux/action_creators/folders_action_creators";
@@ -11,6 +11,9 @@ import readFromLocalStorage from "./utilities/read_from_local_storage";
 function App(){
     const dispatch = useDispatch();
     const [ folders, message ] = useSelector((state) => [ state.folders, state.message ]);
+    const [ appIsLoading, setAppIsLoading ] = useState(true);
+
+    window.addEventListener("load", handleAppLoaded);
 
     useEffect(() => {
         const foldersSortCriteria = readFromLocalStorage("foldersSortCriteria");
@@ -26,10 +29,14 @@ function App(){
         dispatch(changeFoldersSortCriteria( { sortBy: event.target.value } ));
     }
 
+    function handleAppLoaded () {
+        setAppIsLoading(false);
+    }
 
     return(
         <div>
             <Layout
+                appIsLoading={appIsLoading}
                 handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
             />
         </div>

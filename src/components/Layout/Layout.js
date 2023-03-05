@@ -8,6 +8,7 @@ import Message from "../Message/Message";
 
 function Layout (
     {
+        appIsLoading,
         handleFoldersSortCriteriaChange
     }
     ) {
@@ -24,8 +25,9 @@ function Layout (
                 </Routes>
 
                 <Message />
-                <Loader />
             </Desktop>
+
+            <Loader loading={appIsLoading} />
         </div>
     );
 }
