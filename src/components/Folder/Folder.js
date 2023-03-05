@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import { SORT_BY_CREATION_DATE, SORT_BY_NAME, SORT_BY_SIZE } from "../../various_things/constants";
@@ -11,7 +12,8 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
     const folderName = params.foldername;
     const [ folders, sortCriteria ] = useSelector((state) => [ state.folders.folders, state.folders.sortBy]);
     const folder = folders[folderName]; //? JSON.parse(JSON.stringify(folders[folderName])) : null; //Remove all references to avoid state mutation during sorting
-
+    const [ currentHoveredFile, setCurrentHoveredFile ] = useState(null);
+    
 
     if (!folder) {
         return(
@@ -38,6 +40,11 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
         }
     }
 
+
+    function handleFolderFileHoverStart (file) {
+        setCurrentHoveredFile(file);
+    }
+
     return(
         <Container additionalClassNames={[ "folder-wrapper" ]}>
             <div className="folder">
@@ -48,10 +55,17 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
 
                 <Container additionalClassNames={[ "folder__files-container" ]}>
                     {
-                        files.map((file, index) => <FileItem file={file} fileIndex={index} key={`${folder.name}_${file.name}`} />)
+                        files.map((file, index) => 
+                        <FileItem 
+                            file={file} 
+                            fileIndex={index} 
+                            handleFolderFileHoverStart={handleFolderFileHoverStart}
+
+                            key={`${folder.name}_${file.name}`} 
+                        />)
                     }
                 </Container>
-                <FolderFileInfoPanel file={files[0]} />
+                <FolderFileInfoPanel file={currentHoveredFile} />
             </div>
         </Container>
     );
