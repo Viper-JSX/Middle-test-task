@@ -1,7 +1,18 @@
-function FolderFileInfoPanel ({ file }) {
+import bytes from "bytes";
+
+function FolderFileInfoPanel ({ file, filesCount }) {
     return(
         <div className="folder__info-panel">
-            <b>{ file?.name }</b>
+            {
+                file ? //file can be null
+                <>
+                    <b>Size: { file.size }</b>
+                    <b> Created: { file.createdDateString }</b>
+                    <b> Modified: { file.modifiedDateString }</b>
+                </>
+                :
+                <b>Files: { filesCount }</b>
+            }
         </div>
     );
 }

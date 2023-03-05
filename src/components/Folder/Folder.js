@@ -46,7 +46,7 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
     }
 
     function handleFolderFileHoverEnd (file) {
-        setCurrentHoveredFile(file);
+        setCurrentHoveredFile(null);
     }
 
     return(
@@ -70,7 +70,7 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                         />)
                     }
                 </Container>
-                <FolderFileInfoPanel file={currentHoveredFile} />
+                <FolderFileInfoPanel file={currentHoveredFile} filesCount={files.length} />
             </div>
         </Container>
     );
