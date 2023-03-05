@@ -57,18 +57,20 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                     handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange}
                 />
 
-                <Container additionalClassNames={[ "folder__files-container" ]}>
-                    {
-                        files.map((file, index) => 
-                        <FileItem 
-                            file={file} 
-                            fileIndex={index} 
-                            handleFolderFileHoverStart={handleFolderFileHoverStart}
-                            handleFolderFileHoverEnd={handleFolderFileHoverEnd}
-
-                            key={`${folder.name}_${file.name}`} 
-                        />)
-                    }
+                <Container>
+                    <Container additionalClassNames={[ "folder__files-container" ]}>
+                        {
+                            files.map((file, index) => 
+                            <FileItem 
+                                file={file} 
+                                fileIndex={index} 
+                                handleFolderFileHoverStart={handleFolderFileHoverStart}
+                                handleFolderFileHoverEnd={handleFolderFileHoverEnd}
+                        
+                                key={`${folder.name}_${file.name}`} 
+                            />)
+                        }
+                    </Container>
                 </Container>
                 <FolderFileInfoPanel file={currentHoveredFile} filesCount={files.length} />
             </div>
