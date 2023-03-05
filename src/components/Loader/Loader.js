@@ -7,7 +7,8 @@ function Loader ( { loading } ) {
 
     return(
         <div className="loader">
-            <CircularProgress />
+            <CircularProgress color="primary" />
+            <b className="loader__text">Loading...</b>
         </div>
     );  
 }
