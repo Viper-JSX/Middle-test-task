@@ -1,5 +1,6 @@
 import bytes from "bytes";
 import { Link } from "react-router-dom";
+import Container from "../Container/Container";
 import FileIcon from "./File_icon";
 
 function FileItem ({ file, fileIndex, handleFolderFileHoverStart, handleFolderFileHoverEnd }) {
@@ -16,10 +17,12 @@ function FileItem ({ file, fileIndex, handleFolderFileHoverStart, handleFolderFi
 
     return(
         <div className="file-item" title={itemTitle} style={{animationDelay: `${(fileIndex * 0.05)}s`}} onMouseOver={() => handleFolderFileHoverStart({ size, createdDateString, modifiedDateString })} onMouseLeave={handleFolderFileHoverEnd}>
-            <Link>
-                <FileIcon fileName={file.name} />
-                { file.name }
-            </Link>
+            <Container additionalClassNames={[ "file-item__content" ]}>
+                <Link>
+                    <FileIcon fileName={file.name} />
+                    { file.name }
+                </Link>
+            </Container>
         </div>
     );
 }

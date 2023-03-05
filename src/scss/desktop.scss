@@ -50,22 +50,23 @@
     height: 100px;
     color: $dark-color;
     margin: 0.4em;
-    padding: 0.2em;
     text-align: center;
     word-break: break-all;
-    overflow: hidden;
+    position: relative;
     transition: 0.2s;
     transform: scale(1.2);
+    overflow: hidden;
 
     &:hover{
-        background-color: $transparent-light-dark-color;
+        overflow: visible;
+        z-index: 3;
+
+        .file-item__content {
+            background-color: $transparent-light-dark-color;
+        }
     }
 
     animation: file-appear 0.4s 1 forwards;
-
-    &::after {
-        content: var(--file-index);
-    }
 }
 
 .file-item {
@@ -75,8 +76,16 @@
     }
 }
 
+.file-item__content {
+    min-width: 100%;
+    min-height: 100%;
+    padding: 0.3em;
+    transition: 0.1s;
+    justify-content: center;
+    align-items: flex-start !important;
+}
+
 .file-icon-container {
     font-size: 40px;
-    display: flex;
     justify-content: center;
 }

@@ -76,6 +76,7 @@
     flex-wrap: wrap;
     align-items: flex-start !important;
     flex-grow: 1;
+    overflow-y: auto; /*not working*/
 }
 
 .folder__file-info-panel {
