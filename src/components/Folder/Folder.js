@@ -45,6 +45,10 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
         setCurrentHoveredFile(file);
     }
 
+    function handleFolderFileHoverEnd (file) {
+        setCurrentHoveredFile(file);
+    }
+
     return(
         <Container additionalClassNames={[ "folder-wrapper" ]}>
             <div className="folder">
@@ -60,6 +64,7 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                             file={file} 
                             fileIndex={index} 
                             handleFolderFileHoverStart={handleFolderFileHoverStart}
+                            handleFolderFileHoverEnd={handleFolderFileHoverEnd}
 
                             key={`${folder.name}_${file.name}`} 
                         />)

@@ -2,7 +2,7 @@ import bytes from "bytes";
 import { Link } from "react-router-dom";
 import FileIcon from "./File_icon";
 
-function FileItem ({ file, fileIndex, handleFolderFileHoverStart }) {
+function FileItem ({ file, fileIndex, handleFolderFileHoverStart, handleFolderFileHoverEnd }) {
     const createdDate =  new Date(file.atime);
     const modifiedDate = new Date(file.mtime);
     const createdDateString = `${ createdDate.toDateString() } - ${ String(createdDate.getHours()).padStart(2, "0") }:${ String(createdDate.getMinutes()).padStart(2, "0") }`;
@@ -15,7 +15,7 @@ function FileItem ({ file, fileIndex, handleFolderFileHoverStart }) {
 
 
     return(
-        <div className="file-item" title={itemTitle} style={{animationDelay: `${(fileIndex * 0.05)}s`}} onMouseOver={() => handleFolderFileHoverStart(file)}>
+        <div className="file-item" title={itemTitle} style={{animationDelay: `${(fileIndex * 0.05)}s`}} onMouseOver={() => handleFolderFileHoverStart(file)} onMouseLeave={handleFolderFileHoverEnd}>
             <Link>
                 <FileIcon fileName={file.name} />
                 { file.name }
