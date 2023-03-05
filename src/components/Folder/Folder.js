@@ -22,60 +22,6 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
     } 
 
     let files = [...folder.files];
-    console.log(files)
-
-    files = [
-            {
-                "name": "ТЗ.docx",
-                "type": "inode/x-empty",
-                "size": 0,
-                "atime": 1641977227,
-                "mtime": 1641977231,
-                "dev": 2049
-            },
-            {
-                "name": "regions.xlsx",
-                "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                "size": 10234,
-                "atime": 1677985849,
-                "mtime": 1641977227,
-                "dev": 2049
-            },
-            {
-                "name": "Гитарный буфер.pdf",
-                "type": "application/pdf",
-                "size": 448230,
-                "atime": 1677985849,
-                "mtime": 1641977229,
-                "dev": 2049
-            },
-            {
-                "name": "ТЗп.docx",
-                "type": "inode/x-empty",
-                "size": 0,
-                "atime": 1641977227,
-                "mtime": 1641977231,
-                "dev": 2049
-            },
-            {
-                "name": "regionss.xlsx",
-                "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                "size": 10234,
-                "atime": 1677985849,
-                "mtime": 1641977227,
-                "dev": 2049
-            },
-            {
-                "name": "Гитарный буферр.pdf",
-                "type": "application/pdf",
-                "size": 448230,
-                "atime": 1677985849,
-                "mtime": 1641977229,
-                "dev": 2049
-            }
-            
-]
-    
 
     switch (sortCriteria) {
         case SORT_BY_NAME: {
@@ -117,7 +63,6 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                             files.map((file, index) => 
                             <FileItem 
                                 file={file} 
-                                fileIndex={index} 
                                 handleFolderFileHoverStart={handleFolderFileHoverStart}
                                 handleFolderFileHoverEnd={handleFolderFileHoverEnd}
 
