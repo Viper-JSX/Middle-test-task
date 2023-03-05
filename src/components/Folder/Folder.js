@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router";
 import { SORT_BY_CREATION_DATE, SORT_BY_NAME, SORT_BY_SIZE } from "../../various_things/constants";
 import Container from "../Container/Container";
 import FileItem from "../Items/File_item";
+import FolderFileInfoPanel from "./Folder_pannel/Folder_file_info_panel";
 import FolderTopPanel from "./Folder_pannel/Folder_top_panel";
 
 function Folder ({ handleFoldersSortCriteriaChange }) {
@@ -50,6 +51,7 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                         files.map((file, index) => <FileItem file={file} fileIndex={index} key={`${folder.name}_${file.name}`} />)
                     }
                 </Container>
+                <FolderFileInfoPanel file={files[0]} />
             </div>
         </Container>
     );
