@@ -50,7 +50,7 @@
     width: 80px;
     height: 100px;
     color: $dark-color;
-    margin: 0.4em;
+    margin: 1.5em 1em 1.5em 1em;
     text-align: center;
     word-break: break-all;
     position: relative;
@@ -78,7 +78,7 @@
 .file-item__content {
     min-width: 100%;
     min-height: 100%;
-    padding: 0.3em;
+    // padding: 0.3em;
     transition: 0.1s;
     justify-content: center;
     align-items: flex-start !important;
