@@ -14,7 +14,7 @@ function FileInfo ({ info, handleFileClose }) {
                 <Container additionalClassNames={[ "file-info__content" ]}>
                     <span><b>Size: </b>{ info.size }</span>
                     <span><b>Created: </b>{ info.createdDate }</span>
-                    <span><b>Size: </b>{ info.modifiedDate }</span>
+                    <span><b>Modified: </b>{ info.modifiedDate }</span>
                 </Container>
             </div>
         </Container>

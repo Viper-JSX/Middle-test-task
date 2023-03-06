@@ -76,7 +76,6 @@
 }
 
 .sort-by{
-    margin: 10px 0 0 0;
     align-self: flex-end;
 }
 
@@ -127,6 +126,11 @@
     background-color: $dark-color;
     display: flex;
     justify-content: space-between;
+}
+
+.file-info-top-panel .filename, .folder .folder-name {
+    padding: 0.3em;
+    word-break: break-all;
 }
 
 .file-info__content {

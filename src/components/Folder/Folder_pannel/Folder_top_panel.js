@@ -17,7 +17,7 @@ function FolderTopPanel (
         <div className="folder__top-panel">
             <Container>
                 <div className="hidden"></div>
-                <b>{ folderName }</b>
+                <b className="folder-name">{ folderName }</b>
                 <FolderControl />
             </Container>  
 
