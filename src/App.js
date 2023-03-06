@@ -12,8 +12,6 @@ function App(){
     const dispatch = useDispatch();
     const [ appIsLoading, setAppIsLoading ] = useState(true);
 
-    window.addEventListener("load", handleAppLoaded);
-
     useEffect(() => {
         const foldersSortCriteria = readFromLocalStorage("foldersSortCriteria");
         if (foldersSortCriteria) { //If criteria was saved to localStorage
@@ -21,15 +19,12 @@ function App(){
         }
         
         dispatch(getFolders());
+        setAppIsLoading(false);
     }, []);
 
 
     function handleFoldersSortCriteriaChange (event) {
         dispatch(changeFoldersSortCriteria( { sortBy: event.target.value } ));
-    }
-
-    function handleAppLoaded () {
-        setAppIsLoading(false);
     }
 
     return(
