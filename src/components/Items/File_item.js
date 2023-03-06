@@ -16,7 +16,8 @@ function FileItem ({ file, handleFolderFileHoverStart, handleFolderFileHoverEnd 
 
 
     return(
-        <div className="file-item" title={itemTitle} onMouseOver={() => handleFolderFileHoverStart({ size, createdDateString, modifiedDateString })} onMouseLeave={handleFolderFileHoverEnd}>
+        <div className="file-item" title={itemTitle} onMouseEnter={() => handleFolderFileHoverStart({ size, createdDateString, modifiedDateString })} onMouseLeave={handleFolderFileHoverEnd} >
+        
             <Container additionalClassNames={[ "file-item__content" ]}>
                 <Link>
                     <FileIcon fileName={file.name} />
