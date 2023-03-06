@@ -1,5 +1,5 @@
 import Container from "../../Container/Container";
-import FileInfoPanel from "./File_info_panel";
+import FileInfoTopPanel from "./File_info_top_panel";
 
 function FileInfo ({ info, handleFileClose }) {
     if (!info) {
@@ -7,13 +7,15 @@ function FileInfo ({ info, handleFileClose }) {
     }
 
     return(
-        <Container>
+        <Container additionalClassNames={[ "file-info-wrapper" ]}>
             <div className="file-info">
-                <FileInfoPanel fileName={info.name} handleFileClose={handleFileClose} />
+                <FileInfoTopPanel fileName={info.name} handleFileClose={handleFileClose} />
                 
-                <span><b>Size: </b>{ info.size }</span>
-                <span><b>Created: </b>{ info.createdDate }</span>
-                <span><b>Size: </b>{ info.modifiedDate }</span>
+                <Container additionalClassNames={[ "file-info__content" ]}>
+                    <span><b>Size: </b>{ info.size }</span>
+                    <span><b>Created: </b>{ info.createdDate }</span>
+                    <span><b>Size: </b>{ info.modifiedDate }</span>
+                </Container>
             </div>
         </Container>
     );

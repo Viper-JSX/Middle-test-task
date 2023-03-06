@@ -18,6 +18,7 @@
     min-height: 180px;
     max-height: 800px;
     background-color: $light-color;
+    position: relative;
     opacity: 0;
 
     display: flex;
@@ -47,16 +48,14 @@
     }
 } 
 
-.folder-control li {
-    width: 1.5em;
-    height: 1.5em;
-    transition: 0.1s;
-    display: flex;
-    line-height: 0;
-}
-
-.folder-control {
+.folder-control, .file-info-control {
     li {
+        width: 1.5em;
+        height: 1.5em;
+        transition: 0.1s;
+        display: flex;
+        line-height: 0;
+
         > * { //Link elements
             width: 100%;
             height: 100%;
@@ -67,6 +66,7 @@
         }
     }
 }
+
 
 .close-button {
     &:hover {
@@ -97,4 +97,34 @@
     padding: 0 0.3em 0 0.3em;
     background-color: gray;
     font-size: 0.8em;
+}
+
+
+.file-info-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: $transparent-dark-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-info {
+    width: 80%;
+    background-color: $light-color;
+}
+
+.file-info-top-panel {
+    color: $light-color;
+    background-color: $dark-color;
+    display: flex;
+    justify-content: space-between;
+}
+
+.file-info__content {
+    display: flex;
+    flex-direction: column;
 }
