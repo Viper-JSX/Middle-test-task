@@ -3801,7 +3801,7 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                             <FileItem 
                                 file={file} 
                                 //key={`${folder.name}_${file.name}`} 
-                                key={index}
+                                // key={index}
 
                                 handleFileOpen={handleFileOpen}
                             />)
