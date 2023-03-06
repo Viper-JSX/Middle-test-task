@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 function Message () {
     const message = useSelector((state) => state.message);
-    const title = message?.title || ""; //Message is null initially
+    const title = message?.title || ""; //Message is initially null
     const text = message?.text || "";
 
     return(

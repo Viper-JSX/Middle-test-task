@@ -30,7 +30,6 @@
 
 .folder-icon {
     color: #F8D775;
-    font-size: 40px;
     display: block;
 }
 
@@ -80,10 +79,8 @@
     min-height: 100%;
     // padding: 0.3em;
     transition: 0.1s;
-    align-items: flex-start !important;
 }
 
-.file-icon-container {
+.folder-icon, .file-icon-container {
     font-size: 40px;
-    justify-content: center;
 }

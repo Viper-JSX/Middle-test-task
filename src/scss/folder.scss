@@ -41,6 +41,12 @@
     }
 }
 
+.folder__top-panel {
+    .hidden {
+        visibility: hidden;
+    }
+} 
+
 .folder-control li {
     width: 1.5em;
     height: 1.5em;

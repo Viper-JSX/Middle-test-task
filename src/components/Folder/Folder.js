@@ -10,7 +10,7 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
     const params = useParams();
     const folderName = params.foldername;
     const [ folders, sortCriteria ] = useSelector((state) => [ state.folders.folders, state.folders.sortBy]);
-    const folder = folders[folderName]; //? JSON.parse(JSON.stringify(folders[folderName])) : null; //Remove all references to avoid state mutation during sorting
+    const folder = folders[folderName];
     
 
     if (!folder) {
