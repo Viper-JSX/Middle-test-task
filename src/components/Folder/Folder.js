@@ -4,11 +4,12 @@ import { useParams } from "react-router";
 import { SORT_BY_CREATION_DATE, SORT_BY_NAME, SORT_BY_SIZE } from "../../various_things/constants";
 import Container from "../Container/Container";
 import FileItem from "../Items/File_item";
+import FileInfo from "./File_info";
 import FolderInfoPanel from "./Folder_pannel/Folder_info_panel";
 import FolderTopPanel from "./Folder_pannel/Folder_top_panel";
 
 function Folder ({ handleFoldersSortCriteriaChange }) {
-    const [ openedFile, setOpenedFile ] = useState(null);
+    const [ openedFileInfo, setOpenedFileInfo ] = useState(null);
     const params = useParams();
     const folderName = params.foldername;
     const [ folders, sortCriteria ] = useSelector((state) => [ state.folders.folders, state.folders.sortBy]);
@@ -3778,6 +3779,13 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
         }
     }
 
+    function handleFileOpen (fileInfo) {
+        setOpenedFileInfo(fileInfo);
+    }
+
+    function handleFileClose () {
+        setOpenedFileInfo(null);
+    }
 
     return(
         <Container additionalClassNames={[ "folder-wrapper" ]}>
@@ -3800,6 +3808,9 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                     </Container>
                 </Container>
                 <FolderInfoPanel filesCount={files.length} />
+
+            
+                <FileInfo info={openedFile} />
             </div>
         </Container>
     );
