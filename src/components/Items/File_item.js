@@ -14,11 +14,12 @@ function FileItem ({ file }) {
 
     return(
         <div className="file-item" title={itemTitle} >
-        
-            <Container additionalClassNames={[ "file-item__content" ]}>
+            <Container additionalClassNames={[ "item-content" ]}>
                 <Link>
-                    <FileIcon fileName={file.name} />
-                    { file.name }
+                    <span className="file-item__icon">
+                        <FileIcon fileName={file.name} />
+                    </span>
+                    <span className="file-item__name">{ file.name }</span>
                 </Link>
             </Container>
         </div>

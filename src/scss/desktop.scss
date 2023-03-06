@@ -12,75 +12,134 @@
     flex-wrap: wrap;
 }
 
-.folder-item {
+// .folder-item {
+//     width: 80px;
+//     height: 100px;
+//     margin: 0.4em;
+//     padding: 0.1em;
+//     text-align: center;
+//     transition: 0.2s;
+//     overflow: hidden;
+// }
+
+// .folder-item {
+//     > * {
+//         text-decoration: none;
+//     }
+// }
+
+// .folder-item__icon {
+//     color: #F8D775;
+//     display: block;
+// }
+
+// .folder-name {
+//     color: $dark-color;
+//     font-size: 1.2em;
+// }
+
+// .folder-item {
+//     &:hover {
+//         background-color: $transparent-light-dark-color;
+//     }
+// }
+
+
+// .file-item {
+//     width: 80px;
+//     height: 100px;
+//     color: $dark-color;
+//     margin: 1.5em 1em 1.5em 1em;
+//     text-align: center;
+//     word-break: break-all;
+//     position: relative;
+//     transition: 0.2s;
+//     transform: scale(1.2);
+//     overflow: hidden;
+
+//     &:hover{
+//         overflow: visible;
+//         z-index: 3;
+
+//         .file-item__content {
+//             background-color: $transparent-light-dark-color;
+//         }
+//     }
+// }
+
+// .file-item {
+//     > * {
+//         color: $dark-color;
+//         text-decoration: none;
+//     }
+// }
+
+// .file-item__content {
+//     min-width: 100%;
+//     min-height: 100%;
+//     // padding: 0.3em;
+//     transition: 0.1s;
+// }
+
+// .folder-item__icon, .file-item__icon {
+//     font-size: 40px;
+// }
+
+// .folder-item, .file-item {
+//     width: 80px;
+//     height: 100px;
+//     margin: 0.4em;
+//     padding: 0.1em;
+//     text-align: center;
+//     transition: 0.2s;
+//     overflow: hidden;
+// }
+
+.folder-item, .file-item {
     width: 80px;
     height: 100px;
-    margin: 0.4em;
-    padding: 0.1em;
-    text-align: center;
-    transition: 0.2s;
-    overflow: hidden;
-}
-
-.folder-item {
-    > * {
-        text-decoration: none;
-    }
-}
-
-.folder-icon {
-    color: #F8D775;
-    display: block;
-}
-
-.folder-name {
-    color: $dark-color;
-    font-size: 1.2em;
-}
-
-.folder-item {
-    &:hover {
-        background-color: $transparent-light-dark-color;
-    }
-}
-
-
-.file-item {
-    width: 80px;
-    height: 100px;
-    color: $dark-color;
-    margin: 1.5em 1em 1.5em 1em;
+    margin: 1rem;
     text-align: center;
     word-break: break-all;
     position: relative;
     transition: 0.2s;
     transform: scale(1.2);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    * {
+        text-decoration: none;
+    }
+
+    .item-content {
+        padding: 0.3em;
+        transition: 0.1s;
+    }
 
     &:hover{
         overflow: visible;
         z-index: 3;
 
-        .file-item__content {
+        .item-content {
             background-color: $transparent-light-dark-color;
         }
     }
 }
 
-.file-item {
-    > * {
-        color: $dark-color;
-        text-decoration: none;
-    }
+
+
+
+.folder-item__name, .file-item__name {
+    color: $dark-color;
+    text-decoration: none;
 }
 
-.file-item__content {
-    min-width: 100%;
-    min-height: 100%;
-    // padding: 0.3em;
-    transition: 0.1s;
+.folder-item__icon {
+    color: #F8D775;
 }
 
-.folder-icon, .file-icon-container {
+.folder-item__icon, .file-item__icon {
     font-size: 40px;
+    line-height: 20px;
 }
