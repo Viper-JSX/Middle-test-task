@@ -6,22 +6,16 @@ import Folder from "../Folder/Folder";
 import Loader from "../Loader/Loader";
 import Message from "../Message/Message";
 
-function Layout (
-    {
-        appIsLoading,
-        handleFoldersSortCriteriaChange
-    }
-    ) {
+function Layout ({ appIsLoading, handleFoldersSortCriteriaChange }) {
     return(
         <div className="layout">
             <Desktop>
-
                 <Routes>
                     <Route path="/" element={ <DesktopWindow /> }>
                         <Route path="/folders/:foldername" element={ <Folder handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange} /> } />
                     </Route>
 
-                    <Route path="*" element={ <h2>Not found</h2> } />
+                    <Route path="*" element={ <h1 style={{ color: "white", textAlign: "center" }} >404 Not found</h1> } />
                 </Routes>
 
                 <Message />

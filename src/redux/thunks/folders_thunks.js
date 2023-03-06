@@ -3,7 +3,7 @@ import { apiToken } from "../../api/api";
 import { GET_FOLDERS } from "../action_types";
 import { showMessage } from "./message_thunks";
 
-function getFolders (payload) {
+function getFolders () {
     return async function (dispatch) {
         try {
             const response = await client.get(

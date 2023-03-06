@@ -1,7 +1,7 @@
 import "./scss/main.scss";
 
 import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeFoldersSortCriteria } from "./redux/action_creators/folders_action_creators";
 import { getFolders } from "./redux/thunks/folders_thunks";
 import Layout from "./components/layout/Layout";
