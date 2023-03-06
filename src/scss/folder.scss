@@ -109,12 +109,16 @@
     left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center !important;
 }
 
 .file-info {
     width: 80%;
+    height: 200px;
     background-color: $light-color;
+    opacity: 0;
+
+    animation: folder-open 0.5s 1 forwards;
 }
 
 .file-info-top-panel {
@@ -125,6 +129,8 @@
 }
 
 .file-info__content {
+    max-height: 95%;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
