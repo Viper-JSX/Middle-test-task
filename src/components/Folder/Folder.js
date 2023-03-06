@@ -3805,7 +3805,6 @@ function Folder ({ handleFoldersSortCriteriaChange }) {
                                 key={index}
 
                                 handleFileOpen={handleFileOpen}
-                                handleFileClose={handleFileClose}
                             />)
                         }
                     </Container>

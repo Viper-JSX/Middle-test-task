@@ -9,7 +9,7 @@ function FileInfo ({ info, handleFileClose }) {
     return(
         <Container>
             <div className="file-info">
-                <FileInfoPanel handleFileClose={handleFileClose} />
+                <FileInfoPanel fileName={info.name} handleFileClose={handleFileClose} />
                 
                 <span><b>Size: </b>{ info.size }</span>
                 <span><b>Created: </b>{ info.createdDate }</span>
