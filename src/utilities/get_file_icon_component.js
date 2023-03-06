@@ -1,4 +1,4 @@
-import { faFileText, faFileImage, faFilePdf, faFileWord, faFileExcel  } from "@fortawesome/free-solid-svg-icons";
+import { faFileText, faFileImage, faFilePdf, faFileWord, faFileExcel, faFile  } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -38,13 +38,8 @@ function getFileIconComponent (extension="") {
             break;
         }
 
-        // case ".txt": {
-        //     icon = icon = { color: "black", icon: faFileText };
-        //     break;
-        // }
-
         default: {
-            icon =  { color: "black", icon: "unknown" };
+            icon =  { color: "white", icon: faFile };
         }
     }
 
