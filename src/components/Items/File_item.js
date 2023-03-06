@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Container from "../Container/Container";
 import FileIcon from "./File_icon";
 
-function FileItem ({ file }) {
+function FileItem ({ file, handleFileOpen, handleFileClose }) {
     const createdDate =  new Date(file.atime);
     const modifiedDate = new Date(file.mtime);
     const createdDateString = `${ createdDate.toDateString() } - ${ String(createdDate.getHours()).padStart(2, "0") }:${ String(createdDate.getMinutes()).padStart(2, "0") }`;
@@ -13,7 +13,7 @@ function FileItem ({ file }) {
     const itemTitle = `Created: ${ createdDateString }\nSize: ${ size }\nModified: ${ modifiedDateString }`;
 
     return(
-        <div className="file-item" title={itemTitle} >
+        <div className="file-item" title={itemTitle} onClick={() => handleFileOpen({ fileInfo: { name: file.name,  size, createdDate: createdDateString, modifiedDate: modifiedDateString } })} >
             <Container additionalClassNames={[ "item-content" ]}>
                 <Link>
                     <span className="file-item__icon">
