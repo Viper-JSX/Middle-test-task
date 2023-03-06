@@ -115,13 +115,18 @@
     height: 200px;
     background-color: $light-color;
     opacity: 0;
+    display: flex;
+    flex-direction: column;
 
     animation: open 0.5s 1 forwards;
 }
 
 .file-info-top-panel {
+    max-height: 50%;
+    margin-bottom: 0.5em;
     color: $light-color;
     background-color: $dark-color;
+    overflow-y: auto;
     display: flex;
     justify-content: space-between;
 }
@@ -132,9 +137,9 @@
 }
 
 .file-info__content {
-    max-height: 95%;
     padding: 0.5em;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
