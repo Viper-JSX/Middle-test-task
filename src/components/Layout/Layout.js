@@ -5,6 +5,7 @@ import DesktopWindow from "../Desktop_window/Desktop_window";
 import Folder from "../Folder/Folder";
 import Loader from "../Loader/Loader";
 import Message from "../Message/Message";
+import NotFound from "../Not_found/Not_found";
 
 function Layout ({ appIsLoading, handleFoldersSortCriteriaChange }) {
     return(
@@ -15,7 +16,7 @@ function Layout ({ appIsLoading, handleFoldersSortCriteriaChange }) {
                         <Route path="/folders/:foldername" element={ <Folder handleFoldersSortCriteriaChange={handleFoldersSortCriteriaChange} /> } />
                     </Route>
 
-                    <Route path="*" element={ <h1 style={{ color: "white", textAlign: "center" }} >404 Not found</h1> } />
+                    <Route path="*" element={ <NotFound text={ "Not found (404)" } /> } />
                 </Routes>
 
                 <Message />
