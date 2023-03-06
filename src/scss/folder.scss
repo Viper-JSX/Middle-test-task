@@ -75,14 +75,16 @@
 
 .folder > .container {
     display: flex;
-    align-items: flex-start !important;
+    align-items: flex-start; //important
     flex-grow: 1;
     overflow-y: auto;
+    background-color: red;
 }
 
 .folder__files-container {
     padding: 5px;
     flex-wrap: wrap;
+    background-color: green;
 }
 
 .folder__file-info-panel {
