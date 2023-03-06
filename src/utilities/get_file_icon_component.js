@@ -1,7 +1,5 @@
 import { faFileText, faFileImage, faFilePdf, faFileWord, faFileExcel, faFile  } from "@fortawesome/free-solid-svg-icons";
 
-
-
 function getFileIconComponent (extension="") {
     let icon;
 
